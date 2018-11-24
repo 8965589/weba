@@ -21,6 +21,8 @@ import java.util.Map;
 
 /**
  * @Date 2018/11/22 15:06.
+ * <p>
+ * 和 fileserver 放在 同一个 tomcat 下 就可以了  项目 叫 weba 不要变动
  */
 @RestController
 @RequestMapping("/ue")
