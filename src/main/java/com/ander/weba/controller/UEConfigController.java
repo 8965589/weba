@@ -34,7 +34,6 @@ public class UEConfigController {
     public Object conf(HttpServletRequest request, @RequestParam(required = false) String action) throws Exception {
         if (StringUtils.equals(action, "config")) {
             String uirPre = "http://" + request.getServerName() + ":" + request.getServerPort() + "/fileserver/files/weba/";
-
             ObjectMapper mapper = new ObjectMapper();
             File file = ResourceUtils.getFile("classpath:static/ue/jsp/config.json");
             ObjectNode objectNode = mapper.readValue(file, ObjectNode.class);
