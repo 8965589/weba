@@ -29,5 +29,18 @@ CREATE TABLE `auth_role`  (
   `cr_time` datetime(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
-
 SET FOREIGN_KEY_CHECKS = 1;
+
+CREATE TABLE `auth_role_account` (
+  `id` varchar(64) COLLATE utf8_bin NOT NULL,
+  `account_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `role_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+CREATE TABLE `auth_role_permission` (
+  `id` varchar(63) COLLATE utf8_bin NOT NULL,
+  `role_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `permission_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;

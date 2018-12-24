@@ -6,6 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.util.ResourceUtils;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,6 +30,10 @@ import java.util.Map;
 public class UEConfigController {
     private static Logger logger = LogManager.getLogger(UEConfigController.class);
 
+    @GetMapping("/demo")
+    public String demo() {
+        return "ue/demo";
+    }
 
     @RequestMapping("/conf")
     public Object conf(HttpServletRequest request, @RequestParam(required = false) String action) throws Exception {
