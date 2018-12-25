@@ -24,7 +24,8 @@ import java.io.PrintWriter;
 public class ApiRequestFilter extends OncePerRequestFilter {
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
-    @Value("${spring.application.name}")
+    //@Value("${spring.application.name}")
+    @Value("weba")
     private String appName;
 
     @Autowired

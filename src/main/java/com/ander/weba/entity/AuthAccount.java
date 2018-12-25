@@ -1,5 +1,8 @@
-package com.ander.weba.model.auth;
+package com.ander.weba.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -7,21 +10,34 @@ import java.util.Date;
  * @author ander
  * @Date 2018/12/18 18:08.
  */
+@Entity
+@Table(name = "auth_account")
 public class AuthAccount implements Serializable {
-    private String id;
 
+    @Id
+    @GenericGenerator(name = "idGenerator", strategy = "uuid")
+    @GeneratedValue(generator = "idGenerator")
+    private String id;
+    //@Column(name = "enName", unique = true, nullable = false, length = 64)
+    @Column(name = "enName")
     private String enName;
 
+    @Column(name = "cnName")
     private String cnName;
 
+    @Column(name = "password")
     private String password;
 
+    @Column(name = "company")
     private String company;
 
+    @Column(name = "email")
     private String email;
 
+    @Column(name = "crTime")
     private Date crTime;
 
+    @Column(name = "modTime")
     private Date modTime;
 
     private static final long serialVersionUID = 1L;

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
-public class AccountController {
+public class IndexController {
     @RequestMapping(value = {"", "/login"})
     public String login(@RequestParam(required = false) String enName,
                         @RequestParam(required = false) String password,
